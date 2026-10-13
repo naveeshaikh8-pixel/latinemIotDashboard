@@ -84,8 +84,20 @@ DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
 
-### 4. Database Migration & Seeding
-Run migrations and populate historical sample fleet tracking data:
+### 4. Database Setup & Seeding
+You can set up the database using the provided SQL dump or using Laravel migrations and seeders:
+
+**Option A: Import Database SQL Dump (Recommended)**
+A pre-populated database dump is included in the repository:
+- **Relative Path:** [screenshots/latinemiotdashboard.sql](screenshots/latinemiotdashboard.sql)
+- **Direct GitHub URL:** [https://github.com/naveeshaikh8-pixel/latinemIotDashboard/blob/main/screenshots/latinemiotdashboard.sql](https://github.com/naveeshaikh8-pixel/latinemIotDashboard/blob/main/screenshots/latinemiotdashboard.sql)
+
+Import into MySQL:
+```bash
+mysql -u root -p latinemIotDashboard < screenshots/latinemiotdashboard.sql
+```
+
+**Option B: Using Laravel Migrations & Seeders**
 ```bash
 php artisan migrate
 php artisan db:seed --class=VehicleTrackingDataSeeder
